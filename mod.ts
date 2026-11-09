@@ -64,7 +64,7 @@ export interface ClientOptions {
   /** Defaults to the `AIGIFMAKER_API_KEY` environment variable. */
   apiKey?: string;
   baseUrl?: string;
-  /** Milliseconds `generate` / `wait` keep polling. Default 5 minutes. */
+  /** Milliseconds `generate` / `wait` keep polling. Default 15 minutes. */
   timeout?: number;
   /** Milliseconds between polls. Default 3 seconds. */
   pollEvery?: number;
@@ -128,7 +128,7 @@ export class Client {
   constructor(o: ClientOptions = {}) {
     this.apiKey = o.apiKey || envKey() || undefined;
     this.baseUrl = (o.baseUrl ?? BASE_URL).replace(/\/$/, "");
-    this.timeout = o.timeout ?? 300_000;
+    this.timeout = o.timeout ?? 900_000;
     this.pollEvery = o.pollEvery ?? 3_000;
     this.fetchImpl = o.fetch ?? ((...a) => fetch(...a));
   }

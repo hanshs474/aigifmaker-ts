@@ -39,7 +39,7 @@ console.log(await credits()); // remaining credits, free to call
 ```ts
 import { Client } from "aigifmaker";
 
-const gif = new Client({ apiKey: "sk-...", timeout: 300_000 }); // milliseconds, 5 minutes by default
+const gif = new Client({ apiKey: "sk-...", timeout: 900_000 }); // milliseconds, 15 minutes by default
 const url = await gif.generate("a tiny dragon sneezing a puff of glitter");
 ```
 
